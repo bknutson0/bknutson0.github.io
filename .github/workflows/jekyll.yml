@@ -11,11 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Download CV PDF from Overleaf
-      run: |
-        mkdir -p files
-        curl -L "${{ secrets.OVERLEAF_CV_PDF_URL }}" -o files/CV.pdf
-
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
