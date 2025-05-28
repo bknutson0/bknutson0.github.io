@@ -7,9 +7,19 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
+
+    - name: Install LaTeX
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive-latex-extra latexmk
+
+    - name: Compile CV
+      run: |
+        mkdir -p files
+        latexmk -pdf -silent -jobname=CV -outdir=cv cv/CV.tex
+        cp cv/CV.pdf files/CV.pdf
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
