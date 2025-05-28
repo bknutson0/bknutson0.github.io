@@ -9,6 +9,11 @@ redirect_from:
 
 {% include base_path %}
 
+<object data="{{ '/files/CV.pdf' | relative_url }}" type="application/pdf" width="100%" height="800px">
+  <p>Your browser doesn’t support inline PDFs.  
+  <a href="{{ '/files/CV.pdf' | relative_url }}">Download the PDF</a>.</p>
+</object>
+
 Education
 ======
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
