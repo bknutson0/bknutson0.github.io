@@ -15,3 +15,6 @@ package-lock.json
 # Ignore the vendor file and bundle for alternative installation
 vendor/
 .bundle/
+
+# Ignore macOS system files
+.DS_Store
