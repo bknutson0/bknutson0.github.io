@@ -2,9 +2,9 @@
 title: "Differential equations"
 collection: teaching
 type: "Teaching Assistant · Undergraduate course"
-permalink: /teaching/2022-fall-diff-eq
+permalink: /teaching/2023-spring-diff-eq
 venue: "Colorado School of Mines, Department of Computational and Applied Mathematics"
-date: 2022-08-23
+date: 2023-1-05
 location: "Golden, Colorado"
 ---
 

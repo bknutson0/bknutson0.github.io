@@ -1,10 +1,10 @@
 ---
-title: "Teaching experience 2"
+title: "Differential equations"
 collection: teaching
 type: "Instructor of Record · Undergraduate course"
-permalink: /teaching/2022-fall-diff-eq
+permalink: /teaching/2024-spring-diff-eq
 venue: "Colorado School of Mines, Department of Computational and Applied Mathematics"
-date: 2022-08-23
+date: 2024-01-05
 location: "Golden, Colorado"
 ---
 
