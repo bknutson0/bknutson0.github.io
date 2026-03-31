@@ -9,8 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-<object data="{{ ‘/files/cv.pdf’ | relative_url }}" type="application/pdf" width="100%" height="800px">
-  <p>Your browser doesn’t support inline PDFs.  
-  <a href="{{ ‘/files/cv.pdf’ | relative_url }}">Download the PDF</a>.</p>
-</object>
+<embed src="{{ ‘/files/cv.pdf’ | relative_url }}" type="application/pdf" width="100%" height="800px" />
+<p><a href="{{ ‘/files/cv.pdf’ | relative_url }}">Download the PDF</a></p>
 
