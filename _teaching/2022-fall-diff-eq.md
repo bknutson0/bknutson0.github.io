@@ -9,12 +9,3 @@ location: "Golden, Colorado"
 ---
 
 Assisted in curriculum design, led recitations, and graded for 60 students.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======

@@ -8,6 +8,3 @@ group :jekyll_plugins do
   gem 'jemoji'
   gem 'webrick', '~> 1.8'
 end
-
-gem 'github-pages'
-gem 'connection_pool', '2.5.0'

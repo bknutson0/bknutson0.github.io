@@ -10,10 +10,9 @@
 locale                   : "en-US"
 title                    : "Brandon Knutson"
 site_theme               : "default"
-title                    : "Brandon Knutson"
 title_separator          : "-"
 name                     : &name "Brandon Knutson"
-description              : &description "I am a PhD student in the Department of Applied Mathematics and Statistics at the Colorado School of Mines."
+description              : &description "I am a PhD Candidate in the Department of Applied Mathematics and Statistics at the Colorado School of Mines."
 url                      : "https://bknutson0.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "bknutson0/bknutson0.github.io"
@@ -26,7 +25,7 @@ author:
   avatar           : "profile.jpeg"
   name             : "Brandon Knutson"
   pronouns         : # example: "she/her"
-  bio              : "Applied math PhD student at the Colorado School of Mines."
+  bio              : "Applied math PhD candidate at the Colorado School of Mines."
   location         : "Golden, CO"
   employer         : "Colorado School of Mines"
   uri              : # URL
@@ -37,7 +36,7 @@ author:
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=FYBp7vIAAAAJ"
   impactstory      : # URL
-  orcid            : "https://orcid.org/my-orcid?orcid=0009-0004-8413-0239"
+  orcid            : "https://orcid.org/0009-0004-8413-0239"
   semantic         : # URL
   pubmed           : # example: "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
@@ -47,7 +46,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "https://bknutson0.github.io/"
+  github           : "bknutson0"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -90,7 +89,7 @@ publication_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
@@ -302,8 +301,6 @@ timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # Plugins
 plugins:
   - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji
@@ -311,8 +308,6 @@ plugins:
 # Mimic GitHub Pages with --safe
 whitelist:
   - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji

@@ -10,12 +10,3 @@ location: "Golden, Colorado"
 
 Delivered concise, engaging lectures to 60 students. Assisted with
 course design and grading.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
