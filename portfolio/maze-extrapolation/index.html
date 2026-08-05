@@ -19,7 +19,7 @@
 
 
 
-<title>On Logical Extrapolation for Mazes with Recurrent and Implicit Networks - Brandon Knutson</title>
+<title>Can Neural Networks Think Longer to Solve Harder Problems? - Brandon Knutson</title>
 
 
 
@@ -29,15 +29,15 @@
 
 <meta property="og:locale" content="en-US">
 <meta property="og:site_name" content="Brandon Knutson">
-<meta property="og:title" content="On Logical Extrapolation for Mazes with Recurrent and Implicit Networks">
+<meta property="og:title" content="Can Neural Networks Think Longer to Solve Harder Problems?">
 
 
-  <link rel="canonical" href="https://bknutson0.github.io/talks/2026-01-22-aaai-talk">
-  <meta property="og:url" content="https://bknutson0.github.io/talks/2026-01-22-aaai-talk">
+  <link rel="canonical" href="https://bknutson0.github.io/portfolio/maze-extrapolation/">
+  <meta property="og:url" content="https://bknutson0.github.io/portfolio/maze-extrapolation/">
 
 
 
-  <meta property="og:description" name="description" content="We investigate whether recurrent and implicit neural networks can perform logical extrapolation on maze-solving tasks. Testing models across multiple dimensions beyond maze size, we identify several failure modes and find evidence that at least one RNN may have learned a dead-end filling heuristic. Training on more diverse data addresses some failure modes but does not improve extrapolation performance overall. Our results demonstrate that logical extrapolation remains vulnerable to goal misgeneralization, and we propose that studying extrapolation dynamics could inform better future architectures.">
+  <meta property="og:description" name="description" content="Stress-testing test-time compute: I evaluated recurrent and implicit networks on out-of-distribution maze-solving, uncovered a hidden heuristic behind their success, and quantified a train-data diversity trade-off. Published at AAAI 2026.">
 
 
 
@@ -260,29 +260,71 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="On Logical Extrapolation for Mazes with Recurrent and Implicit Networks">
-    <meta itemprop="description" content="We investigate whether recurrent and implicit neural networks can perform logical extrapolation on maze-solving tasks. Testing models across multiple dimensions beyond maze size, we identify several failure modes and find evidence that at least one RNN may have learned a dead-end filling heuristic. Training on more diverse data addresses some failure modes but does not improve extrapolation performance overall. Our results demonstrate that logical extrapolation remains vulnerable to goal misgeneralization, and we propose that studying extrapolation dynamics could inform better future architectures.">
+    <meta itemprop="headline" content="Can Neural Networks Think Longer to Solve Harder Problems?">
+    <meta itemprop="description" content="Stress-testing test-time compute: I evaluated recurrent and implicit networks on out-of-distribution maze-solving, uncovered a hidden heuristic behind their success, and quantified a train-data diversity trade-off. Published at AAAI 2026.">
     <meta itemprop="datePublished" content="January 22, 2026">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">On Logical Extrapolation for Mazes with Recurrent and Implicit Networks
+          <h1 class="page__title" itemprop="headline">Can Neural Networks Think Longer to Solve Harder Problems?
 </h1>
           
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="2026-01-22T00:00:00+00:00">January 22, 2026</time></p>
         
         
-
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2026-01-22T00:00:00+00:00">January 22, 2026</time></p>
+            
         </header>
       
 
       <section class="page__content" itemprop="text">
-        <p>We investigate whether recurrent and implicit neural networks can perform logical extrapolation on maze-solving tasks. Testing models across multiple dimensions beyond maze size, we identify several failure modes and find evidence that at least one RNN may have learned a dead-end filling heuristic. Training on more diverse data addresses some failure modes but does not improve extrapolation performance overall. Our results demonstrate that logical extrapolation remains vulnerable to goal misgeneralization, and we propose that studying extrapolation dynamics could inform better future architectures.</p>
+        <p><strong>Published at AAAI 2026</strong> · <a href="https://arxiv.org/abs/2410.03020">Paper</a> · <a href="https://github.com/mines-opt-ml/maze-extrapolation">Code</a> · <a href="https://underline.io/lecture/139985-on-logical-extrapolation-for-mazes-with-recurrent-and-implicit-networks">Talk video</a> · <a href="/files/aaai26-slides.pdf">Slides</a> · <a href="/files/aaai26-poster.pdf">Poster</a> · <a href="https://github.com/understanding-search/maze-dataset">maze-dataset package</a></p>
 
-<p>See the <a href="/portfolio/maze-extrapolation/">project page</a> for a full write-up, or view the <a href="https://arxiv.org/abs/2410.03020">paper</a>, <a href="/files/aaai26-slides.pdf">slides</a>, and <a href="/files/aaai26-poster.pdf">poster</a>.</p>
+<p><strong>TL;DR:</strong> Some neural networks can “think longer” at test time by iterating more. I stress-tested whether that extra compute lets them solve problems <em>harder</em> than anything they saw in training. It does — but only along certain axes: the models quietly learned a shortcut heuristic instead of a general algorithm, and diversifying the training data fixed some failures while creating others.</p>
+
+<h2 id="the-problem">The problem</h2>
+
+<p>Production models constantly face inputs harder than their training data. Recurrent networks (RNNs) and implicit networks (INNs) offer a tempting fix: their depth is adjustable at test time, so they can spend more compute on harder inputs — like a person thinking longer about a harder puzzle. I investigated when this actually works and how it fails.</p>
+
+<p><img src="/images/maze-generalization.png" alt="Train on small, easy mazes; test on large mazes and mazes with loops" width="70%" /></p>
+
+<p>Maze-solving is the ideal testbed: classical algorithms provide ground-truth solutions at any difficulty, so I could train on small, easy mazes (9×9, no loops) and generate unlimited <em>harder</em> test mazes along controlled dimensions — bigger grids, “percolated” mazes containing loops, and shifted start positions.</p>
+
+<h2 id="what-i-did">What I did</h2>
+
+<ul>
+  <li>Evaluated a pre-trained RNN and a custom-trained INN (PyTorch) across thousands of out-of-distribution mazes, sweeping test difficulty along size and percolation simultaneously.</li>
+  <li>Compared predictions against classical maze algorithms to identify <em>what the models actually learned</em>, not just their accuracy.</li>
+  <li>Used topological data analysis (Betti numbers via persistent homology) to rigorously characterize what the models’ iterates converge to.</li>
+  <li>Retrained both architectures across a range of training-data diversity levels, against a 10×-larger feedforward baseline.</li>
+</ul>
+
+<h2 id="what-i-found">What I found</h2>
+
+<p><strong>1. Test-time compute works — dramatically.</strong> With enough iterations, the RNN solves mazes 10× larger than anything in training at near-perfect accuracy, and both iterative models beat the feedforward baseline with 10× more parameters.</p>
+
+<p><img src="/images/maze-extrapolation.png" alt="Accuracy vs. maze size: more test-time iterations extend near-perfect accuracy to much larger mazes" /></p>
+
+<p><strong>2. But the model learned a heuristic, not the goal.</strong> The RNN’s predictions match <em>dead-end filling</em>, a classic algorithm that provably fails on mazes with loops — and indeed the RNN collapses on them. This is goal misgeneralization: perfect training accuracy concealed that the model never learned to “solve mazes,” only a shortcut that happened to work on loop-free training data.</p>
+
+<p><img src="/images/maze-rnn-loop-failure.png" alt="On a maze with loops, the RNN's prediction retains loops instead of a valid path" width="70%" /></p>
+
+<p><strong>3. Data diversity is a trade-off, not a free lunch.</strong> Adding just 0.3% wall-removal to training mazes unlocked loop-solving. But as diversity increases, accuracy concentrates around the training distribution and size extrapolation <em>degrades</em> — a concrete, quantified case of a data-curation trade-off.</p>
+
+<p><img src="/images/maze-combined-heatmaps.png" alt="Test accuracy heatmaps: diversifying training data helps loops but hurts size extrapolation" /></p>
+
+<p><strong>4. A standing theoretical assumption didn’t survive contact with data.</strong> Prior work assumed iterates must converge to a fixed point for extrapolation. Topological analysis revealed the RNN often converges to cycles instead — while still achieving perfect accuracy.</p>
+
+<h2 id="why-it-matters-beyond-mazes">Why it matters beyond mazes</h2>
+
+<p>Every finding is a production-ML lesson in miniature: in-distribution accuracy can hide the fact that a model learned the wrong thing; evaluation must probe <em>multiple</em> axes of distribution shift; and “add more diverse data” reallocates capability rather than uniformly adding it. The evaluation framework — controlled difficulty dimensions with algorithmic ground truth — is the same discipline behind any serious model-validation pipeline.</p>
+
+<p><em>Skills: PyTorch, large-scale experiment design, OOD evaluation, model debugging &amp; failure analysis, topological data analysis, scientific communication (peer-reviewed AAAI paper + conference talk).</em></p>
+
+
+        
 
         
       </section>
@@ -303,13 +345,13 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://bsky.app/intent/compose?text=https://bknutson0.github.io/talks/2026-01-22-aaai-talk" class="btn btn--bluesky" title="Share on Bluesky"><i class="fab fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
+  <a href="https://bsky.app/intent/compose?text=https://bknutson0.github.io/portfolio/maze-extrapolation/" class="btn btn--bluesky" title="Share on Bluesky"><i class="fab fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://bknutson0.github.io/talks/2026-01-22-aaai-talk" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://bknutson0.github.io/portfolio/maze-extrapolation/" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://bknutson0.github.io/talks/2026-01-22-aaai-talk" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://bknutson0.github.io/portfolio/maze-extrapolation/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 
-  <a href="https://x.com/intent/post?text=https://bknutson0.github.io/talks/2026-01-22-aaai-talk" class="btn btn--x" title="Share on X"><i class="fab fa-x-twitter" aria-hidden="true"></i><span> X (formerly Twitter)</span></a>
+  <a href="https://x.com/intent/post?text=https://bknutson0.github.io/portfolio/maze-extrapolation/" class="btn btn--x" title="Share on X"><i class="fab fa-x-twitter" aria-hidden="true"></i><span> X (formerly Twitter)</span></a>
 </section>
 
 
