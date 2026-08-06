@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "Resume/CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,6 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<embed src="{{ base_path }}/files/CV.pdf" type="application/pdf" width="100%" height="800px" />
-<p><a href="{{ base_path }}/files/CV.pdf">Download the PDF</a></p>
+<p><a href="{{ base_path }}/files/resume.pdf">Download resume (1 page)</a> · <a href="{{ base_path }}/files/CV.pdf">Download academic CV</a></p>
+
+<embed src="{{ base_path }}/files/resume.pdf" type="application/pdf" width="100%" height="800px" />
 
