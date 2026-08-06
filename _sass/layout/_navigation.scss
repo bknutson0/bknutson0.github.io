@@ -257,6 +257,14 @@
             -ms-transform: scaleX(1);
                 transform: scaleX(1); /* reveal*/
       }
+
+      /* current-page tab: same bar as hover, always shown, full text color */
+      &.nav-current:before {
+        background: var(--global-text-color);
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1);
+      }
     }
   }
 
