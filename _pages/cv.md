@@ -9,7 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
-<p><a href="{{ base_path }}/files/resume.pdf">Download resume (1 page)</a> · <a href="{{ base_path }}/files/CV.pdf">Download academic CV</a></p>
+<p><strong>Resume</strong>: <a href="{{ base_path }}/files/resume.pdf">[PDF]</a></p>
 
-<embed src="{{ base_path }}/files/resume.pdf" type="application/pdf" width="100%" height="800px" />
+<p><strong>CV</strong>: <a href="{{ base_path }}/files/CV.pdf">[PDF]</a></p>
 
+<p>More detail can be found on my <a href="https://www.linkedin.com/in/brandon-knutson-8102/">LinkedIn profile</a>.</p>
