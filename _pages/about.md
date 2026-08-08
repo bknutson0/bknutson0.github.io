@@ -5,27 +5,57 @@ author_profile: true
 redirect_from:
   - /about/
   - /about.html
+  - /portfolio/
 ---
 
-I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.edu/) at the Colorado School of Mines. I completed my dual BA in mathematics and physics at the University of Colorado Boulder.
+I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.edu/) at the Colorado School of Mines (dual BA in mathematics and physics, CU Boulder), researching when neural networks that "think longer" at test time can solve problems harder than anything they trained on — in the [MODL group](https://ams.mines.edu/research/optimization-and-deep-learning/), advised by Daniel McKenzie and Samy Wu Fung. **I'm seeking data science and machine learning roles starting early 2027.**
+{: .lead}
 
-[Mines Optimization and Deep Learning (MODL)](https://ams.mines.edu/research/optimization-and-deep-learning/) group, advised by Daniel McKenzie and Samy Wu Fung. My research asks when networks that "think longer" at test time can solve problems harder than anything they trained on — work I presented orally at AAAI 2026 ([see the project page](/portfolio/maze-extrapolation/)).
-
----
-
-**Before the PhD**, I worked on applied ML and analytics outside academia: as a machine learning intern at **Oak Ridge National Laboratory**, I built a geospatial data pipeline and trained a model predicting building heights from satellite imagery for 898,000 buildings; as an **operations research analyst for the US Navy**, I developed cost models behind multi-billion-dollar acquisition decisions and briefed them to senior decision-makers. At Mines, I've taught Differential Equations as **Instructor of Record**, delivering the course to 60 students and assisting with its design.
-
-**I'm currently seeking data science and machine learning roles** starting early 2027. My toolkit: Python, PyTorch, SQL, pandas/scikit-learn, Docker, AWS/GCP, and HPC/multi-GPU systems.
-
-[Featured project](/portfolio/maze-extrapolation/) · [Resume](/files/resume.pdf) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=FYBp7vIAAAAJ)
-
-## News
-
-- **Jan 2026** — Presented an oral talk at AAAI 2026 in Singapore ([video](https://underline.io/lecture/139985-on-logical-extrapolation-for-mazes-with-recurrent-and-implicit-networks)).
-- **2025** — [maze-dataset](https://doi.org/10.21105/joss.08633), our open-source maze-generation package (80+ GitHub stars), published in the Journal of Open Source Software.
-- **2024** — Instructor of Record for Differential Equations at Mines.
-- **2023** — Machine learning internship at Oak Ridge National Laboratory.
-
----
+[Resume](/files/resume.pdf) · [CV](/files/CV.pdf)
 
 Outside of research you'll find me on a pickleball court, hiking Colorado trails, or defending my ranked spot in League of Legends.
+
+## What I do
+
+### Model
+
+I design and evaluate deep learning models — recurrent and implicit networks, out-of-distribution evaluation, failure-mode analysis — with peer-reviewed results at AAAI 2026 and JOSS.
+
+### Build
+
+I ship working code: a geospatial ML pipeline covering 898,000 buildings at **Oak Ridge National Laboratory**, an open-source maze-generation package with 80+ GitHub stars, and tooling in Python, PyTorch, SQL, Docker, and AWS/GCP.
+
+### Communicate
+
+I've briefed multi-billion-dollar cost analyses to senior **US Navy** decision-makers, taught Differential Equations to 60 students as Instructor of Record, and led a coding bootcamp for incoming PhD students.
+
+## Featured projects
+
+<div class="feature-card">
+  <a href="/portfolio/maze-extrapolation/"><img src="/images/maze-generalization.png" alt="Models trained on easy mazes, tested on much harder ones"></a>
+  <div>
+    <h3><a href="/portfolio/maze-extrapolation/">Can neural networks think longer to solve harder problems?</a></h3>
+    <p>I stress-tested "think-longer" architectures on mazes far harder than their training data, uncovered the shortcut heuristic behind their success, and quantified a data-diversity trade-off. Published at <strong>AAAI 2026</strong> (oral).</p>
+    <p><a href="/portfolio/maze-extrapolation/">Check it out →</a></p>
+  </div>
+</div>
+
+<div class="feature-card feature-card--reverse">
+  <a href="/portfolio/maze-dataset/"><img src="/images/maze-problem-solution.png" alt="A maze problem and its solution encoded as images"></a>
+  <div>
+    <h3><a href="/portfolio/maze-dataset/">maze-dataset: open-source maze generation</a></h3>
+    <p>I co-developed a peer-reviewed Python package for generating maze datasets with controllable difficulty — <strong>80+ GitHub stars</strong>, used in neural-network reasoning research. Published in <strong>JOSS</strong>.</p>
+    <p><a href="/portfolio/maze-dataset/">Check it out →</a></p>
+  </div>
+</div>
+
+<div class="feature-card">
+  <a href="/portfolio/ornl-building-heights/"><img src="/images/ornl-footprints.png" alt="Satellite imagery of Denver converted to building footprints"></a>
+  <div>
+    <h3><a href="/portfolio/ornl-building-heights/">Predicting building heights from satellite footprints</a></h3>
+    <p>At <strong>Oak Ridge National Laboratory</strong>, I trained XGBoost on 898,000 buildings to predict heights from satellite-visible footprints (<strong>0.70 m MAE</strong>) — and showed that adding coarse global height data doesn't help.</p>
+    <p><a href="/portfolio/ornl-building-heights/">Check it out →</a></p>
+  </div>
+</div>
+
+Full list of papers and talks → [Research](/research/)
