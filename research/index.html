@@ -103,6 +103,52 @@
 <link rel="stylesheet" href="https://bknutson0.github.io/assets/css/academicons.css"/>
 
 
+<!-- Inter (self-hosted, headings only) + typographic scale -->
+<style>
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("https://bknutson0.github.io/assets/fonts/inter-600.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("https://bknutson0.github.io/assets/fonts/inter-700.woff2") format("woff2");
+  }
+  /* Headings in deep navy from the portrait's shirt/lake blues */
+  h1, h2 { color: var(--global-heading-color); }
+  /* Bold text in readable antique gold (bright gold is decoration-only) */
+  .page__content strong, .page__content b { color: var(--accent-gold-text); }
+  /* Site title in the identity navy; white in dark mode */
+  .masthead__menu-item--lg a { color: var(--global-heading-color); }
+  /* Text selection in brand gold */
+  ::selection { background: var(--accent-gold); color: #252a30; }
+  /* Size correlates with importance: section > skill > explanation */
+  .page__content h2 { font-size: 1.75em; }
+  .page__content h3 { font-size: 1.4em; color: var(--accent-gold-text); }
+  .page__content .lead { font-size: 1.125em; }
+</style>
+
+<!-- Featured-project card on the home page: image beside text, stacks on mobile -->
+<style>
+  .feature-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25em;
+    flex-wrap: wrap;
+    margin: 1em 0;
+  }
+  .feature-card > a { flex: 1 1 220px; max-width: 340px; }
+  .feature-card > a img { width: 100%; height: auto; display: block; }
+  .feature-card > div { flex: 2 1 300px; }
+  .feature-card h3 { margin-top: 0; }
+  .feature-card--reverse { flex-direction: row-reverse; }
+</style>
+
 <!-- Support for MatJax -->
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -127,13 +173,13 @@
           <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="https://bknutson0.github.io/">Brandon Knutson</a></li>
           
             
-            <li class="masthead__menu-item"><a href="https://bknutson0.github.io/portfolio/">Projects</a></li>
-          
-            
-            <li class="masthead__menu-item"><a href="https://bknutson0.github.io/cv/">Resume/CV</a></li>
+            <li class="masthead__menu-item"><a href="https://bknutson0.github.io/">About</a></li>
           
             
             <li class="masthead__menu-item"><a class="nav-current" href="https://bknutson0.github.io/research/">Research</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://bknutson0.github.io/cv/">Resume/CV</a></li>
           
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
@@ -222,6 +268,8 @@
       
             
             
+      
+        <li><a href="https://www.linkedin.com/in/brandon-knutson-8102"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn</a></li>
             
       
             
@@ -332,7 +380,7 @@
 
 <div class="page__footer-copyright">
   &copy; 2026 Brandon Knutson, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2026-08-07<br />
+  Site last updated 2026-08-08<br />
   Favicon: <a href="https://www.flaticon.com/free-icons/ouroboros" title="ouroboros icons" rel="nofollow">ouroboros icon by Prosymbols Premium — Flaticon</a>
 </div>
 

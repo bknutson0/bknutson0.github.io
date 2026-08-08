@@ -19,7 +19,7 @@
 
 
 
-<title>Page Not Found - Brandon Knutson</title>
+<title>Predicting Building Heights from Satellite-Derived Footprints - Brandon Knutson</title>
 
 
 
@@ -29,13 +29,15 @@
 
 <meta property="og:locale" content="en-US">
 <meta property="og:site_name" content="Brandon Knutson">
-<meta property="og:title" content="Page Not Found">
+<meta property="og:title" content="Predicting Building Heights from Satellite-Derived Footprints">
 
 
-  <link rel="canonical" href="https://bknutson0.github.io/404.html">
-  <meta property="og:url" content="https://bknutson0.github.io/404.html">
+  <link rel="canonical" href="https://bknutson0.github.io/portfolio/ornl-building-heights/">
+  <meta property="og:url" content="https://bknutson0.github.io/portfolio/ornl-building-heights/">
 
 
+
+  <meta property="og:description" name="description" content="At Oak Ridge National Laboratory, I trained an XGBoost model on 898,000 buildings to predict building heights from footprint features (0.70 m MAE), and showed that adding coarse global height data doesn’t help.">
 
 
 
@@ -48,6 +50,9 @@
 
 
 
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2023-07-01T00:00:00+00:00">
 
 
 
@@ -296,25 +301,55 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Page Not Found">
-    
-    
+    <meta itemprop="headline" content="Predicting Building Heights from Satellite-Derived Footprints">
+    <meta itemprop="description" content="At Oak Ridge National Laboratory, I trained an XGBoost model on 898,000 buildings to predict building heights from footprint features (0.70 m MAE), and showed that adding coarse global height data doesn’t help.">
+    <meta itemprop="datePublished" content="July 01, 2023">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Page Not Found
+          <h1 class="page__title" itemprop="headline">Predicting Building Heights from Satellite-Derived Footprints
 </h1>
           
         
         
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2023-07-01T00:00:00+00:00">July 01, 2023</time></p>
             
         </header>
       
 
       <section class="page__content" itemprop="text">
-        <p>Sorry, but the page you were trying to view does not exist.</p>
+        <p><strong>Machine learning internship, Oak Ridge National Laboratory (GeoAI group), Summer 2023</strong> · <a href="/files/ornl_poster.pdf">Poster</a></p>
+
+<p><strong>TL;DR:</strong> Accurate building heights feed models of population, energy efficiency, and climate risk — but the LIDAR that measures them directly is too expensive for most of the world. I built a machine learning pipeline at ORNL that predicts individual building heights from satellite-visible footprint features, reaching <strong>0.70 m mean absolute error</strong> across 898,000 Colorado buildings, and ran a controlled experiment showing that a widely-used global height dataset adds essentially nothing to prediction accuracy.</p>
+
+<p><img src="/images/ornl-footprints.png" alt="Satellite imagery of Denver, CO converted to building footprints" /></p>
+
+<h2 id="the-problem">The problem</h2>
+
+<p>LIDAR height measurements are the gold standard but only wealthy cities can afford the scans. Satellite imagery is cheap and global — and while it doesn’t measure height, the building <em>footprints</em> visible in it (area, perimeter, neighborhood density) are highly predictive of height. The open question: does adding the best available coarse-scale global height product — the European Commission’s 100 m Average Net Building Height (ANBH) — improve predictions beyond what footprints alone provide, especially for tall buildings?</p>
+
+<h2 id="what-i-did">What I did</h2>
+
+<ul>
+  <li>Built the data-processing pipeline for vector and raster geospatial data using <strong>PostGIS</strong>, <strong>QGIS</strong>, and <strong>Docker</strong>, on ORNL’s GAUNTLET footprint-feature dataset (65 features per building).</li>
+  <li>Trained <strong>XGBoost</strong> models on 898,000 LIDAR-verified Colorado buildings (80/20 train/test) — Colorado chosen for its rural-to-urban diversity — in two controlled configurations: footprint features alone, and footprint features + ANBH.</li>
+  <li>Benchmarked against median and linear-regression baselines, evaluating with MAE, RMSE, and R².</li>
+</ul>
+
+<h2 id="what-i-found">What I found</h2>
+
+<p><strong>Footprint features carry nearly all the signal.</strong> The footprint-only model achieved 0.698 m MAE (vs. 1.15 m for the median baseline). Adding ANBH moved the metrics by rounding error: MAE 0.698 → 0.695 m, RMSE 1.134 → 1.128 m, R² 0.528 → 0.533.</p>
+
+<p><strong>And I could explain why.</strong> Auditing ANBH directly against LIDAR ground truth showed the coarse data itself was poor: 3.09 m MAE — nearly 3× worse than simply predicting the median. A negative result, but a decision-ready one: teams building global height models shouldn’t spend integration effort on ANBH.</p>
+
+<h2 id="why-it-matters-beyond-buildings">Why it matters beyond buildings</h2>
+
+<p>This is the everyday shape of industry data science: a plausible-sounding data source, a controlled experiment to price its value, and a clear recommendation backed by an audit of <em>why</em> the result came out the way it did. The same discipline — baseline first, ablate one variable, diagnose the mechanism — is what separates “we added the data” from “we know what the data is worth.”</p>
+
+<p><em>Skills: XGBoost, geospatial data engineering (PostGIS, QGIS, vector/raster), Docker, GitLab, experiment design, baseline benchmarking, communicating negative results.</em></p>
 
 
         
@@ -333,8 +368,33 @@
 
       
 
+<section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://bsky.app/intent/compose?text=https://bknutson0.github.io/portfolio/ornl-building-heights/" class="btn btn--bluesky" title="Share on Bluesky"><i class="fab fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://bknutson0.github.io/portfolio/ornl-building-heights/" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://bknutson0.github.io/portfolio/ornl-building-heights/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+
+  <a href="https://x.com/intent/post?text=https://bknutson0.github.io/portfolio/ornl-building-heights/" class="btn btn--x" title="Share on X"><i class="fab fa-x-twitter" aria-hidden="true"></i><span> X (formerly Twitter)</span></a>
+</section>
+
+
       
 
+
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="https://bknutson0.github.io/portfolio/maze-dataset/" class="pagination--pager" title="maze-dataset: Open-Source Maze Generation for ML Research
+">Next</a>
+    
+  </nav>
 
     </div>
 
