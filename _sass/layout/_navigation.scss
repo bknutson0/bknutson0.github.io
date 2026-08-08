@@ -187,6 +187,10 @@
     &:hover {
       color: var(--global-masthead-link-color-hover);
     }
+
+    &.nav-current {
+      color: var(--global-masthead-link-color-hover);
+    }
   }
 
   button {
@@ -243,7 +247,7 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        background: var(--global-border-color);
+        background: var(--accent-gold);
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
@@ -258,9 +262,9 @@
                 transform: scaleX(1); /* reveal*/
       }
 
-      /* current-page tab: same bar as hover, always shown, full text color */
+      /* current-page tab: same bar as hover, always shown, accent blue */
       &.nav-current:before {
-        background: var(--global-text-color);
+        background: var(--accent-blue);
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
                 transform: scaleX(1);
