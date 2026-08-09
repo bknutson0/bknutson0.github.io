@@ -31,25 +31,25 @@ See my [Google Scholar profile](https://scholar.google.com/citations?hl=en&user=
 
 ---
 
-# Talks
+# Presentations
 
 **Toward Faster Implicit Network Training via Random Truncation**
-<br>_SIAM Conference on Optimization, June 2026_
+<br>_SIAM Conference on Optimization, University of Edinburgh, June 2026 — talk_
 <br>[[Slides](/files/siamop26_slides.pdf)]
 
 **On Logical Extrapolation for Mazes with Recurrent and Implicit Networks**
-<br>_AAAI 2026, Singapore — oral presentation, January 2026_
+<br>_AAAI 2026, Singapore, January 2026 — talk_
 <br>[[Video](https://underline.io/lecture/139985-on-logical-extrapolation-for-mazes-with-recurrent-and-implicit-networks)] [[Slides](/files/aaai26-slides.pdf)] [[Poster](/files/aaai26-poster.pdf)]
 
 **Extrapolating with a Recurrent Neural Network on Mazes**
 <br>_Dynamics Days, July 2025 — poster_
 
 **Generalizing with Neural Networks on Mazes**
-<br>_Graduate Research and Discovery Symposium (GRADS), Colorado School of Mines, April 2025_
+<br>_Graduate Research and Discovery Symposium (GRADS), Colorado School of Mines, April 2025 — talk_
 <br>[[Slides](https://hdl.handle.net/11124/180375)]
 
 **Extrapolating with a Recurrent Neural Network on Mazes**
-<br>_IMSI Computational Imaging Workshop, August 2024 — poster_
+<br>_IMSI Computational Imaging Workshop, University of Chicago, August 2024 — poster_
 
 **Estimating Building Heights from Footprints and Coarse-Scale Height Data**
 <br>_Intern research symposium, Oak Ridge National Laboratory, July 2023 — poster_

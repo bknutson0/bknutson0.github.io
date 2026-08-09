@@ -8,12 +8,10 @@ redirect_from:
   - /portfolio/
 ---
 
-I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.edu/) at the Colorado School of Mines (dual BA in mathematics and physics, CU Boulder), researching when neural networks that "think longer" at test time can solve problems harder than anything they trained on — in the [MODL group](https://ams.mines.edu/research/optimization-and-deep-learning/), advised by Daniel McKenzie and Samy Wu Fung. **I'm seeking data science and machine learning roles starting early 2027.**
+I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.edu/) at the Colorado School of Mines, advised by [Dr. Daniel McKenzie](https://danielmckenzie.github.io/) and [Dr. Samy Wu Fung](https://swufung.github.io/). My research lies at the intersection of deep learning and optimization: I study neural networks that can think longer to solve harder problems, and how to train them faster. **I'm seeking data science and machine learning roles starting early 2027.**
 {: .lead}
 
-[Resume](/files/resume.pdf) · [CV](/files/CV.pdf)
-
-Outside of research you'll find me on a pickleball court, hiking Colorado trails, or defending my ranked spot in League of Legends.
+[Resume](/files/resume.pdf) · [CV](/files/CV.pdf) · [Research](/research/)
 
 ## What I do
 
@@ -58,4 +56,6 @@ I've briefed multi-billion-dollar cost analyses to senior **US Navy** decision-m
   </div>
 </div>
 
-Full list of papers and talks → [Research](/research/)
+### Off the clock
+
+You'll find me on a pickleball court, hiking Colorado trails, or listening to Noah Kahan.
