@@ -44,7 +44,7 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
 <div class="feature-card">
   <a href="/portfolio/maze-extrapolation/"><img src="/images/maze-generalization.png" alt="Models trained on easy mazes, tested on much harder ones"></a>
   <div>
-    <h3><a href="/portfolio/maze-extrapolation/">Can neural networks think longer to solve harder problems?</a></h3>
+    <h3><a href="/portfolio/maze-extrapolation/">When can neural networks think longer to solve harder problems?</a></h3>
     <p>I stress-tested architectures designed to extrapolate on mazes far harder than their training data, uncovered the shortcut heuristic behind their success, and quantified a data-diversity trade-off. Published at <strong>AAAI 2026</strong> (oral).</p>
     <p><a href="/portfolio/maze-extrapolation/">Check it out →</a></p>
   </div>

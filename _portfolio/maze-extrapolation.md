@@ -1,5 +1,5 @@
 ---
-title: "Can Neural Networks Think Longer to Solve Harder Problems?"
+title: "When Can Neural Networks Think Longer to Solve Harder Problems?"
 excerpt: "Stress-testing test-time compute: I evaluated recurrent and implicit networks on out-of-distribution maze-solving, uncovered a hidden heuristic behind their success, and quantified a train-data diversity trade-off. Published at AAAI 2026.<br/><img src='/images/maze-generalization.png' alt='Models trained on easy mazes are tested on much harder ones'>"
 collection: portfolio
 date: 2026-01-22
@@ -24,17 +24,17 @@ Maze-solving is the ideal testbed: classical algorithms provide ground-truth sol
 ## What I did
 
 - Evaluated a pre-trained RNN from [Bansal et al.](https://arxiv.org/abs/2202.05826) and a custom-trained INN across thousands of out-of-distribution mazes, varying maze size, percolation, and deadend-start.
-- Investigated _what the models actually learned_ by studying their failures: correct answers all look alike, but failures have signatures. This is how we found that the RNN had approximately learned _dead-end filling_ (a classic maze-solving algorithm). The INN matched no algorithm we tested.
+- Investigated _what the models actually learned_ by studying their failures: correct answers all look alike, but failures have signatures. This is how we found that the RNN had approximately learned _dead-end filling_. The INN matched no algorithm we tested.
 - Used topological data analysis to rigorously measure whether the networks' internal computations converge to a fixed point, or something else.
 - Retrained both architectures across a range of training-data diversity levels, against a standard network 10× the size, to assess how diversification affects generalization.
 
 ## What I found
 
-**1. Test-time compute works — dramatically.** With enough iterations, the RNN solves mazes 10× larger than anything in training at near-perfect accuracy, and both iterative models beat a standard network 10× their size.
+**1. Test-time compute works — dramatically.** With enough iterations, the RNN solves mazes 10× larger than anything in training at near-perfect accuracy, and both iterative models beat a standard network with 10× the parameters.
 
 <img class="fig fig--wide" src="/images/maze-extrapolation.png" alt="Accuracy vs. maze size: more test-time iterations extend near-perfect accuracy to much larger mazes">
 
-**2. But the model learned a heuristic, not the goal.** The RNN's predictions match _dead-end filling_, a classic algorithm that provably fails on mazes with loops — and indeed the RNN fails on them, incorrectly retaining loops from the input maze in its prediction. This is goal misgeneralization: perfect training accuracy concealed that the model never learned a general maze-solving method, only a shortcut that fails on mazes with loops.
+**2. But the model learned a heuristic, not the goal.** The RNN's predictions approximately match _dead-end filling_, a classic algorithm that provably fails on mazes with loops — and indeed the RNN fails on them, incorrectly retaining loops from the input maze in its prediction. This is goal misgeneralization: perfect training accuracy concealed that the model never learned a general maze-solving method, only a shortcut.
 
 <img class="fig" src="/images/maze-rnn-loop-failure.png" alt="On a maze with loops, the RNN's prediction retains loops instead of a valid path">
 
@@ -48,6 +48,6 @@ Maze-solving is the ideal testbed: classical algorithms provide ground-truth sol
 
 ## Why it matters beyond mazes
 
-Every finding is a production-ML lesson in miniature: in-distribution accuracy can hide the fact that a model learned the wrong thing; evaluation must probe _multiple_ axes of distribution shift; and "add more diverse data" reallocates capability rather than uniformly adding it. The evaluation framework — controlled difficulty dimensions with algorithmic ground truth — is the same discipline behind any serious model-validation pipeline.
+Mazes are a toy problem — and that is exactly the point. They are a miniature testbed for some of the biggest questions in modern AI. **Test-time scaling:** RNNs and INNs really can think longer to solve harder problems — the same principle that, realized in a very different architecture, drives today's [reasoning models](https://arxiv.org/abs/2408.03314). **Goal misgeneralization:** like all models, they can ace training while learning the wrong thing, and no accuracy metric reveals it until the distribution shifts. **Interpretability:** even with full access to a small network on a toy task, we could only characterize its _behavior_ — the RNN's predictions match dead-end filling's — not its underlying _mechanism_. Two algorithms can agree on every output and still compute completely differently inside. **Data diversification:** broadening the training data improved generalization in one direction while degrading it in another.
 
 _Skills: Python/PyTorch, large-scale experiment design, out-of-distribution evaluation & stress-testing, model debugging & failure analysis, topological data analysis, scientific communication (peer-reviewed AAAI paper + conference talk)._
