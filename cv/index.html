@@ -94,14 +94,27 @@
 <!-- start custom head snippets -->
 
 <!-- favicon: ouroboros by Prosymbols Premium via Flaticon (https://www.flaticon.com/free-icons/ouroboros), attribution in footer -->
-<link rel="apple-touch-icon" sizes="180x180" href="https://bknutson0.github.io/images/apple-touch-icon-180x180.png"/>
-<link rel="icon" type="image/png" href="https://bknutson0.github.io/images/favicon-32x32.png" sizes="32x32"/>
-<link rel="icon" type="image/png" href="https://bknutson0.github.io/images/favicon-192x192.png" sizes="192x192"/>
-<link rel="manifest" href="https://bknutson0.github.io/images/manifest.json"/>
-<link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
-<link rel="stylesheet" href="https://bknutson0.github.io/assets/css/academicons.css"/>
-
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="https://bknutson0.github.io/images/apple-touch-icon-180x180.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href="https://bknutson0.github.io/images/favicon-32x32.png"
+  sizes="32x32"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href="https://bknutson0.github.io/images/favicon-192x192.png"
+  sizes="192x192"
+/>
+<link rel="manifest" href="https://bknutson0.github.io/images/manifest.json" />
+<link rel="icon" href="/images/favicon.ico" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="stylesheet" href="https://bknutson0.github.io/assets/css/academicons.css" />
 
 <!-- Inter (self-hosted, headings only) + typographic scale -->
 <style>
@@ -120,17 +133,35 @@
     src: url("https://bknutson0.github.io/assets/fonts/inter-700.woff2") format("woff2");
   }
   /* Headings in deep navy from the portrait's shirt/lake blues */
-  h1, h2 { color: var(--global-heading-color); }
+  h1,
+  h2 {
+    color: var(--global-heading-color);
+  }
   /* Bold text in readable antique gold (bright gold is decoration-only) */
-  .page__content strong, .page__content b { color: var(--accent-gold-text); }
+  .page__content strong,
+  .page__content b {
+    color: var(--accent-gold-text);
+  }
   /* Site title in the identity navy; white in dark mode */
-  .masthead__menu-item--lg a { color: var(--global-heading-color); }
+  .masthead__menu-item--lg a {
+    color: var(--global-heading-color);
+  }
   /* Text selection in brand gold */
-  ::selection { background: var(--accent-gold); color: #252a30; }
+  ::selection {
+    background: var(--accent-gold);
+    color: #252a30;
+  }
   /* Size correlates with importance: section > skill > explanation */
-  .page__content h2 { font-size: 1.75em; }
-  .page__content h3 { font-size: 1.4em; color: var(--accent-gold-text); }
-  .page__content .lead { font-size: 1.125em; }
+  .page__content h2 {
+    font-size: 1.75em;
+  }
+  .page__content h3 {
+    font-size: 1.4em;
+    color: var(--accent-gold-text);
+  }
+  .page__content .lead {
+    font-size: 1.125em;
+  }
 </style>
 
 <!-- Featured-project card on the home page: image beside text, stacks on mobile -->
@@ -142,16 +173,63 @@
     flex-wrap: wrap;
     margin: 1em 0;
   }
-  .feature-card > a { flex: 1 1 220px; max-width: 340px; }
-  .feature-card > a img { width: 100%; height: auto; display: block; }
-  .feature-card > div { flex: 2 1 300px; }
-  .feature-card h3 { margin-top: 0; }
-  .feature-card--reverse { flex-direction: row-reverse; }
+  .feature-card > a {
+    flex: 1 1 220px;
+    max-width: 340px;
+  }
+  .feature-card > a img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .feature-card > div {
+    flex: 2 1 300px;
+  }
+  .feature-card h3 {
+    margin-top: 0;
+  }
+  .feature-card--reverse {
+    flex-direction: row-reverse;
+  }
+  /* Skill rows: large gold icon column, text beside — mirrors the card layout */
+  .skill-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25em;
+    margin: 1.5em 0;
+  }
+  .skill-card > i {
+    color: var(--accent-gold-text);
+    font-size: 4.6em;
+    flex: 0 0 1.3em;
+    text-align: center;
+  }
+  .skill-card h3 {
+    margin-top: 0;
+  }
+  .skill-card p {
+    margin-top: 0.4em;
+    margin-bottom: 0;
+  }
+  @media (max-width: 500px) {
+    .skill-card {
+      gap: 0.8em;
+    }
+    .skill-card > i {
+      font-size: 1.7em;
+      flex-basis: auto;
+      margin-top: 0.35em;
+    }
+  }
 </style>
 
 <!-- Support for MatJax -->
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+></script>
 
 <!-- end custom head snippets -->
 
@@ -335,7 +413,7 @@
 
 <div class="page__footer-copyright">
   &copy; 2026 Brandon Knutson, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2026-08-09<br />
+  Site last updated 2026-08-14<br />
   Favicon: <a href="https://www.flaticon.com/free-icons/ouroboros" title="ouroboros icons" rel="nofollow">ouroboros icon by Prosymbols Premium — Flaticon</a>
 </div>
 
