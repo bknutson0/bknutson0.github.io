@@ -7,9 +7,11 @@ date: 2025-10-01
 
 **Journal of Open Source Software, 2025** &middot; [Paper](https://doi.org/10.21105/joss.08633) &middot; [Code](https://github.com/understanding-search/maze-dataset)
 
+_Joint work led by Michael Ivanitskiy, with Aaron Sandoval, Alexander F. Spies, Tilman Räuker, Cecilia Diniz-Behn, and Samy Wu Fung._
+
 **TL;DR:** `maze-dataset` is an open-source Python library for generating maze datasets with algorithmic variety — different generation algorithms, difficulty parameters, and output representations (images, tokens, graphs) — with solvers and visualization built in. It has 80+ GitHub stars and is used by researchers studying neural-network reasoning and interpretability.
 
-<img src="/images/maze-problem-solution.png" alt="A maze problem and its solution encoded as images" width="70%">
+<img class="fig" src="/images/maze-problem-solution.png" alt="A maze problem and its solution encoded as images">
 
 ## Why it exists
 

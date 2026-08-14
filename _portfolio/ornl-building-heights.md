@@ -7,9 +7,11 @@ date: 2023-07-01
 
 **Machine learning internship, Oak Ridge National Laboratory (GeoAI group), Summer 2023** &middot; [Poster](/files/ornl_poster.pdf)
 
+_Joint work with Clinton Stipek, Taylor Hauser, and Robert Stewart (mentor)._
+
 **TL;DR:** Accurate building heights feed models of population, energy efficiency, and climate risk — but the LIDAR that measures them directly is too expensive for most of the world. I built a machine learning pipeline at ORNL that predicts individual building heights from satellite-visible footprint features, reaching **0.70 m mean absolute error** across 898,000 Colorado buildings, and ran a controlled experiment showing that a widely-used global height dataset adds essentially nothing to prediction accuracy.
 
-<img src="/images/ornl-footprints.png" alt="Satellite imagery of Denver, CO converted to building footprints">
+<img class="fig" src="/images/ornl-footprints.png" alt="Satellite imagery of Denver, CO converted to building footprints">
 
 ## The problem
 

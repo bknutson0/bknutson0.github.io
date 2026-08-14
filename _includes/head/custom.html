@@ -100,6 +100,15 @@
   .feature-card--reverse {
     flex-direction: row-reverse;
   }
+  /* Uniform inline figures: one standard width, a wide variant for dense plots */
+  .page__content img.fig {
+    display: block;
+    margin: 1.5em auto;
+    width: min(620px, 100%);
+  }
+  .page__content img.fig--wide {
+    width: min(900px, 100%);
+  }
   /* Skill rows: large gold icon column, text beside — mirrors the card layout */
   .skill-card {
     display: flex;

@@ -7,41 +7,47 @@ date: 2026-01-22
 
 **Published at AAAI 2026** &middot; [Paper](https://arxiv.org/abs/2410.03020) &middot; [Code](https://github.com/mines-opt-ml/maze-extrapolation) &middot; [Talk video](https://underline.io/lecture/139985-on-logical-extrapolation-for-mazes-with-recurrent-and-implicit-networks) &middot; [Slides](/files/aaai26-slides.pdf) &middot; [Poster](/files/aaai26-poster.pdf) &middot; [maze-dataset package](https://github.com/understanding-search/maze-dataset)
 
-**TL;DR:** Some neural networks can "think longer" at test time by iterating more. I stress-tested whether that extra compute lets them solve problems *harder* than anything they saw in training. It does — but only along certain axes: the models quietly learned a shortcut heuristic instead of a general algorithm, and diversifying the training data fixed some failures while creating others.
+_Joint work with Amandin Chyba Rabeendran, Michael Ivanitskiy, Jordan Pettyjohn, Cecilia Diniz-Behn, Samy Wu Fung, and Daniel McKenzie._
+
+**TL;DR:** Some neural networks can "think longer" at test time by iterating more. I stress-tested whether that extra compute lets them solve problems _harder_ than anything they saw in training. It does — in some ways but not others: the models quietly learned a shortcut heuristic instead of a general algorithm, and diversifying the training data fixed some failures while creating others.
 
 ## The problem
 
 Production models constantly face inputs harder than their training data. Recurrent networks (RNNs) and implicit networks (INNs) offer a tempting fix: their depth is adjustable at test time, so they can spend more compute on harder inputs — like a person thinking longer about a harder puzzle. I investigated when this actually works and how it fails.
 
-<img src="/images/maze-generalization.png" alt="Train on small, easy mazes; test on large mazes and mazes with loops" width="70%">
+<img class="fig" src="/images/maze-generalization.png" alt="Train on small, easy mazes; test on large mazes and mazes with loops">
 
-Maze-solving is the ideal testbed: classical algorithms provide ground-truth solutions at any difficulty, so I could train on small, easy mazes (9×9, no loops) and generate unlimited *harder* test mazes along controlled dimensions — bigger grids, "percolated" mazes containing loops, and shifted start positions.
+Maze-solving is the ideal testbed: classical algorithms provide ground-truth solutions at any difficulty, so I trained on easy mazes and generated _harder_ test mazes along three controlled dimensions. **Maze size** (e.g., 9×9) makes problems bigger. **Percolation** (_p_ = 0 to 1) removes walls to create loops, producing multiple solutions where previously there was one. **Deadend-start** (True or False) controls whether the solution path begins at a dead end. The models were trained only on the easiest corner of this space — 9×9 mazes with _p_ = 0 and deadend-start True — then tested far beyond it. All mazes come from [maze-dataset](/portfolio/maze-dataset/), the open-source package we built for exactly this purpose.
+
+<img class="fig" src="/images/maze-ood-shifts.png" alt="Three axes of increasing test difficulty: maze size, percolation, and start position">
 
 ## What I did
 
-- Evaluated a pre-trained RNN and a custom-trained INN (PyTorch) across thousands of out-of-distribution mazes, sweeping test difficulty along size and percolation simultaneously.
-- Compared predictions against classical maze algorithms to identify *what the models actually learned*, not just their accuracy.
-- Used topological data analysis (Betti numbers via persistent homology) to rigorously characterize what the models' iterates converge to.
-- Retrained both architectures across a range of training-data diversity levels, against a 10×-larger feedforward baseline.
+- Evaluated a pre-trained RNN from [Bansal et al.](https://arxiv.org/abs/2202.05826) and a custom-trained INN across thousands of out-of-distribution mazes, varying maze size, percolation, and deadend-start.
+- Investigated _what the models actually learned_ by studying their failures: correct answers all look alike, but failures have signatures. This is how we found that the RNN had approximately learned _dead-end filling_ (a classic maze-solving algorithm). The INN matched no algorithm we tested.
+- Used topological data analysis to rigorously measure whether the networks' internal computations converge to a fixed point, or something else.
+- Retrained both architectures across a range of training-data diversity levels, against a standard network 10× the size, to assess how diversification affects generalization.
 
 ## What I found
 
-**1. Test-time compute works — dramatically.** With enough iterations, the RNN solves mazes 10× larger than anything in training at near-perfect accuracy, and both iterative models beat the feedforward baseline with 10× more parameters.
+**1. Test-time compute works — dramatically.** With enough iterations, the RNN solves mazes 10× larger than anything in training at near-perfect accuracy, and both iterative models beat a standard network 10× their size.
 
-<img src="/images/maze-extrapolation.png" alt="Accuracy vs. maze size: more test-time iterations extend near-perfect accuracy to much larger mazes">
+<img class="fig fig--wide" src="/images/maze-extrapolation.png" alt="Accuracy vs. maze size: more test-time iterations extend near-perfect accuracy to much larger mazes">
 
-**2. But the model learned a heuristic, not the goal.** The RNN's predictions match *dead-end filling*, a classic algorithm that provably fails on mazes with loops — and indeed the RNN collapses on them. This is goal misgeneralization: perfect training accuracy concealed that the model never learned to "solve mazes," only a shortcut that happened to work on loop-free training data.
+**2. But the model learned a heuristic, not the goal.** The RNN's predictions match _dead-end filling_, a classic algorithm that provably fails on mazes with loops — and indeed the RNN fails on them, incorrectly retaining loops from the input maze in its prediction. This is goal misgeneralization: perfect training accuracy concealed that the model never learned a general maze-solving method, only a shortcut that fails on mazes with loops.
 
-<img src="/images/maze-rnn-loop-failure.png" alt="On a maze with loops, the RNN's prediction retains loops instead of a valid path" width="70%">
+<img class="fig" src="/images/maze-rnn-loop-failure.png" alt="On a maze with loops, the RNN's prediction retains loops instead of a valid path">
 
-**3. Data diversity is a trade-off, not a free lunch.** Adding just 0.3% wall-removal to training mazes unlocked loop-solving. But as diversity increases, accuracy concentrates around the training distribution and size extrapolation *degrades* — a concrete, quantified case of a data-curation trade-off.
+**3. Data diversity is a trade-off, not a free lunch.** I diversified the training data by raising its percolation above _p_ = 0, letting the models see mazes with loops during training. Even _p_ = 0.003 unlocked loop-solving — but as training percolation grew, accuracy concentrated around the training distribution and size extrapolation _degraded_.
 
-<img src="/images/maze-combined-heatmaps.png" alt="Test accuracy heatmaps: diversifying training data helps loops but hurts size extrapolation">
+<img class="fig fig--wide" src="/images/maze-combined-heatmaps.png" alt="Test accuracy heatmaps: diversifying training data helps loops but hurts size extrapolation">
 
-**4. A standing theoretical assumption didn't survive contact with data.** Prior work assumed iterates must converge to a fixed point for extrapolation. Topological analysis revealed the RNN often converges to cycles instead — while still achieving perfect accuracy.
+**4. A standing theoretical assumption was contradicted.** Prior work assumed iterates must converge to a fixed point for extrapolation. Topological analysis revealed the RNN often converges to cycles instead while still achieving perfect accuracy — behavior that standard residual plots hide, but PCA projections expose.
+
+<img class="fig" src="/images/maze-residual-pca.png" alt="Residual plots look flat or noisy, but PCA projections reveal the iterates cycling between two points (top) or around two loops (bottom)">
 
 ## Why it matters beyond mazes
 
-Every finding is a production-ML lesson in miniature: in-distribution accuracy can hide the fact that a model learned the wrong thing; evaluation must probe *multiple* axes of distribution shift; and "add more diverse data" reallocates capability rather than uniformly adding it. The evaluation framework — controlled difficulty dimensions with algorithmic ground truth — is the same discipline behind any serious model-validation pipeline.
+Every finding is a production-ML lesson in miniature: in-distribution accuracy can hide the fact that a model learned the wrong thing; evaluation must probe _multiple_ axes of distribution shift; and "add more diverse data" reallocates capability rather than uniformly adding it. The evaluation framework — controlled difficulty dimensions with algorithmic ground truth — is the same discipline behind any serious model-validation pipeline.
 
-*Skills: PyTorch, large-scale experiment design, OOD evaluation, model debugging & failure analysis, topological data analysis, scientific communication (peer-reviewed AAAI paper + conference talk).*
+_Skills: Python/PyTorch, large-scale experiment design, out-of-distribution evaluation & stress-testing, model debugging & failure analysis, topological data analysis, scientific communication (peer-reviewed AAAI paper + conference talk)._
