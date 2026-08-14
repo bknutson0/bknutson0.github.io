@@ -196,6 +196,15 @@
   .feature-card--reverse {
     flex-direction: row-reverse;
   }
+  /* Uniform inline figures: one standard width, a wide variant for dense plots */
+  .page__content img.fig {
+    display: block;
+    margin: 1.5em auto;
+    width: min(620px, 100%);
+  }
+  .page__content img.fig--wide {
+    width: min(900px, 100%);
+  }
   /* Skill rows: large gold icon column, text beside — mirrors the card layout */
   .skill-card {
     display: flex;
@@ -300,7 +309,7 @@
   <div class="author__content">
     <h3 class="author__name">Brandon Knutson</h3>
     
-    <p class="author__bio">Applied math PhD candidate at the Colorado School of Mines.</p>
+    <p class="author__bio">Applied math PhD candidate @ Colorado School of Mines.</p>
   </div>
 
   <div class="author__urls-wrapper">
@@ -414,25 +423,6 @@
 
 
       </footer>
-
-      
-
-<section class="page__share">
-  
-    <h4 class="page__share-title">Share on</h4>
-  
-
-  <a href="https://bsky.app/intent/compose?text=https://bknutson0.github.io/talks/2026-01-22-aaai-talk" class="btn btn--bluesky" title="Share on Bluesky"><i class="fab fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://bknutson0.github.io/talks/2026-01-22-aaai-talk" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://bknutson0.github.io/talks/2026-01-22-aaai-talk" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-
-  <a href="https://x.com/intent/post?text=https://bknutson0.github.io/talks/2026-01-22-aaai-talk" class="btn btn--x" title="Share on X"><i class="fab fa-x-twitter" aria-hidden="true"></i><span> X (formerly Twitter)</span></a>
-</section>
-
-
-      
 
 
     </div>

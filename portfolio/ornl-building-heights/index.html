@@ -196,6 +196,15 @@
   .feature-card--reverse {
     flex-direction: row-reverse;
   }
+  /* Uniform inline figures: one standard width, a wide variant for dense plots */
+  .page__content img.fig {
+    display: block;
+    margin: 1.5em auto;
+    width: min(620px, 100%);
+  }
+  .page__content img.fig--wide {
+    width: min(900px, 100%);
+  }
   /* Skill rows: large gold icon column, text beside — mirrors the card layout */
   .skill-card {
     display: flex;
@@ -300,7 +309,7 @@
   <div class="author__content">
     <h3 class="author__name">Brandon Knutson</h3>
     
-    <p class="author__bio">Applied math PhD candidate at the Colorado School of Mines.</p>
+    <p class="author__bio">Applied math PhD candidate @ Colorado School of Mines.</p>
   </div>
 
   <div class="author__urls-wrapper">
@@ -401,9 +410,11 @@
       <section class="page__content" itemprop="text">
         <p><strong>Machine learning internship, Oak Ridge National Laboratory (GeoAI group), Summer 2023</strong> · <a href="/files/ornl_poster.pdf">Poster</a></p>
 
+<p><em>Joint work with Clinton Stipek, Taylor Hauser, and Robert Stewart (mentor).</em></p>
+
 <p><strong>TL;DR:</strong> Accurate building heights feed models of population, energy efficiency, and climate risk — but the LIDAR that measures them directly is too expensive for most of the world. I built a machine learning pipeline at ORNL that predicts individual building heights from satellite-visible footprint features, reaching <strong>0.70 m mean absolute error</strong> across 898,000 Colorado buildings, and ran a controlled experiment showing that a widely-used global height dataset adds essentially nothing to prediction accuracy.</p>
 
-<p><img src="/images/ornl-footprints.png" alt="Satellite imagery of Denver, CO converted to building footprints" /></p>
+<p><img class="fig" src="/images/ornl-footprints.png" alt="Satellite imagery of Denver, CO converted to building footprints" /></p>
 
 <h2 id="the-problem">The problem</h2>
 
@@ -444,35 +455,6 @@
 
       </footer>
 
-      
-
-<section class="page__share">
-  
-    <h4 class="page__share-title">Share on</h4>
-  
-
-  <a href="https://bsky.app/intent/compose?text=https://bknutson0.github.io/portfolio/ornl-building-heights/" class="btn btn--bluesky" title="Share on Bluesky"><i class="fab fa-bluesky" aria-hidden="true"></i><span> Bluesky</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://bknutson0.github.io/portfolio/ornl-building-heights/" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://bknutson0.github.io/portfolio/ornl-building-heights/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-
-  <a href="https://x.com/intent/post?text=https://bknutson0.github.io/portfolio/ornl-building-heights/" class="btn btn--x" title="Share on X"><i class="fab fa-x-twitter" aria-hidden="true"></i><span> X (formerly Twitter)</span></a>
-</section>
-
-
-      
-
-
-  <nav class="pagination">
-    
-      <a href="#" class="pagination--pager disabled">Previous</a>
-    
-    
-      <a href="https://bknutson0.github.io/portfolio/maze-dataset/" class="pagination--pager" title="maze-dataset: Open-Source Maze Generation for ML Research
-">Next</a>
-    
-  </nav>
 
     </div>
 

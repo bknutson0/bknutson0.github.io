@@ -191,6 +191,15 @@
   .feature-card--reverse {
     flex-direction: row-reverse;
   }
+  /* Uniform inline figures: one standard width, a wide variant for dense plots */
+  .page__content img.fig {
+    display: block;
+    margin: 1.5em auto;
+    width: min(620px, 100%);
+  }
+  .page__content img.fig--wide {
+    width: min(900px, 100%);
+  }
   /* Skill rows: large gold icon column, text beside — mirrors the card layout */
   .skill-card {
     display: flex;
@@ -295,7 +304,7 @@
   <div class="author__content">
     <h3 class="author__name">Brandon Knutson</h3>
     
-    <p class="author__bio">Applied math PhD candidate at the Colorado School of Mines.</p>
+    <p class="author__bio">Applied math PhD candidate @ Colorado School of Mines.</p>
   </div>
 
   <div class="author__urls-wrapper">
@@ -469,10 +478,6 @@
 
 
       </footer>
-
-      
-
-      
 
 
     </div>
