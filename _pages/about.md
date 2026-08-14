@@ -15,17 +15,29 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
 
 ## What I do
 
-### Model
+<div class="skill-card">
+  <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
+  <div>
+    <h3>Build</h3>
+    <p>I love to design the simplest system that solves the problem, adding complexity only when it becomes necessary. At <strong>Oak Ridge National Laboratory</strong> I helped build a geospatial ML pipeline covering 898,000 buildings, and I co-developed <a href="https://github.com/understanding-search/maze-dataset">maze-dataset</a>, a peer-reviewed open-source package with <strong>80+ GitHub stars</strong> — working in Python, PyTorch, SQL, Docker, and AWS/GCP.</p>
+  </div>
+</div>
 
-I design and evaluate deep learning models — recurrent and implicit networks, out-of-distribution evaluation, failure-mode analysis — with peer-reviewed results at AAAI 2026 and JOSS.
+<div class="skill-card">
+  <i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i>
+  <div>
+    <h3>Evaluate</h3>
+    <p>I stress-test models to find where they break and why, because you don't know a system until you know its limits. My <strong>AAAI 2026</strong> paper traced neural networks' out-of-distribution failures to a hidden shortcut heuristic, and my controlled ablation at <strong>ORNL</strong> showed that a recent global height dataset adds nothing to prediction accuracy.</p>
+  </div>
+</div>
 
-### Build
-
-I ship working code: a geospatial ML pipeline covering 898,000 buildings at **Oak Ridge National Laboratory**, an open-source maze-generation package with 80+ GitHub stars, and tooling in Python, PyTorch, SQL, Docker, and AWS/GCP.
-
-### Communicate
-
-I've briefed multi-billion-dollar cost analyses to senior **US Navy** decision-makers, taught Differential Equations to 60 students as Instructor of Record, and led a coding bootcamp for incoming PhD students.
+<div class="skill-card">
+  <i class="fas fa-comments" aria-hidden="true"></i>
+  <div>
+    <h3>Communicate</h3>
+    <p>I explain complex ideas simply because it forces me to understand deeply. I've briefed multi-billion-dollar cost analyses to senior decision-makers across federal agencies including the <strong>US Navy, Air Force, and NASA</strong>, taught Differential Equations to 60 students as Instructor of Record, and led a coding bootcamp for incoming PhD students.</p>
+  </div>
+</div>
 
 ## Featured projects
 
@@ -33,7 +45,7 @@ I've briefed multi-billion-dollar cost analyses to senior **US Navy** decision-m
   <a href="/portfolio/maze-extrapolation/"><img src="/images/maze-generalization.png" alt="Models trained on easy mazes, tested on much harder ones"></a>
   <div>
     <h3><a href="/portfolio/maze-extrapolation/">Can neural networks think longer to solve harder problems?</a></h3>
-    <p>I stress-tested "think-longer" architectures on mazes far harder than their training data, uncovered the shortcut heuristic behind their success, and quantified a data-diversity trade-off. Published at <strong>AAAI 2026</strong> (oral).</p>
+    <p>I stress-tested architectures designed to extrapolate on mazes far harder than their training data, uncovered the shortcut heuristic behind their success, and quantified a data-diversity trade-off. Published at <strong>AAAI 2026</strong> (oral).</p>
     <p><a href="/portfolio/maze-extrapolation/">Check it out →</a></p>
   </div>
 </div>
@@ -42,7 +54,7 @@ I've briefed multi-billion-dollar cost analyses to senior **US Navy** decision-m
   <a href="/portfolio/maze-dataset/"><img src="/images/maze-problem-solution.png" alt="A maze problem and its solution encoded as images"></a>
   <div>
     <h3><a href="/portfolio/maze-dataset/">maze-dataset: open-source maze generation</a></h3>
-    <p>I co-developed a peer-reviewed Python package for generating maze datasets with controllable difficulty — <strong>80+ GitHub stars</strong>, used in neural-network reasoning research. Published in <strong>JOSS</strong>.</p>
+    <p>I co-developed a peer-reviewed Python package for generating, solving, and visualizing maze datasets, used in neural-network reasoning research with <strong>80+ GitHub stars</strong> Published in <strong>JOSS</strong>.</p>
     <p><a href="/portfolio/maze-dataset/">Check it out →</a></p>
   </div>
 </div>
