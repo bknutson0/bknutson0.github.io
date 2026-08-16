@@ -205,6 +205,25 @@
   .page__content img.fig--wide {
     width: min(900px, 100%);
   }
+  /* Two photos side by side, stacking on narrow screens */
+  .page__content .photo-row {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin: 1.5em 0;
+  }
+  .page__content .photo-row img {
+    flex: 1 1 300px;
+    min-width: 0;
+    width: 100%;
+    object-fit: cover;
+  }
+  .page__content .fig-caption {
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--global-text-color-light);
+    margin-top: -0.75em;
+  }
   /* Skill rows: large gold icon column, text beside — mirrors the card layout */
   .skill-card {
     display: flex;
@@ -455,6 +474,15 @@
 
 <p>Mazes are a toy problem — and that is exactly the point. They are a miniature testbed for some of the biggest questions in modern AI. <strong>Test-time scaling:</strong> RNNs and INNs really can think longer to solve harder problems — the same principle that, realized in a very different architecture, drives today’s <a href="https://arxiv.org/abs/2408.03314">reasoning models</a>. <strong>Goal misgeneralization:</strong> like all models, they can ace training while learning the wrong thing, and no accuracy metric reveals it until the distribution shifts. <strong>Interpretability:</strong> even with full access to a small network on a toy task, we could only characterize its <em>behavior</em> — the RNN’s predictions match dead-end filling’s — not its underlying <em>mechanism</em>. Two algorithms can agree on every output and still compute completely differently inside. <strong>Data diversification:</strong> broadening the training data improved generalization in one direction while degrading it in another.</p>
 
+<h2 id="from-colorado-to-singapore">From Colorado to Singapore</h2>
+
+<div class="photo-row">
+  <img src="/images/aaai.jpeg" alt="Standing with the AAAI letters at the 2026 conference in Singapore" />
+  <img src="/images/singapore.jpeg" alt="Downtown Singapore, near the conference venue" />
+</div>
+
+<p>I was lucky enough to have this work accepted at AAAI — <a href="https://scholar.google.com/citations?view_op=top_venues&amp;hl=en&amp;vq=eng_artificialintelligence">ranked the #4 conference in artificial intelligence by Google Scholar</a> — which meant giving an oral presentation to an international audience of experts on the other side of the world in Singapore. It was an unforgettable way to cap a years-long project.</p>
+
 <p><em>Skills: Python/PyTorch, large-scale experiment design, out-of-distribution evaluation &amp; stress-testing, model debugging &amp; failure analysis, topological data analysis, scientific communication (peer-reviewed AAAI paper + conference talk).</em></p>
 
 
@@ -510,7 +538,7 @@
 
 <div class="page__footer-copyright">
   &copy; 2026 Brandon Knutson, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2026-08-14<br />
+  Site last updated 2026-08-16<br />
   Favicon: <a href="https://www.flaticon.com/free-icons/ouroboros" title="ouroboros icons" rel="nofollow">ouroboros icon by Prosymbols Premium — Flaticon</a>
 </div>
 
