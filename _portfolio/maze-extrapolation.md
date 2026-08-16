@@ -50,4 +50,13 @@ Maze-solving is the ideal testbed: classical algorithms provide ground-truth sol
 
 Mazes are a toy problem — and that is exactly the point. They are a miniature testbed for some of the biggest questions in modern AI. **Test-time scaling:** RNNs and INNs really can think longer to solve harder problems — the same principle that, realized in a very different architecture, drives today's [reasoning models](https://arxiv.org/abs/2408.03314). **Goal misgeneralization:** like all models, they can ace training while learning the wrong thing, and no accuracy metric reveals it until the distribution shifts. **Interpretability:** even with full access to a small network on a toy task, we could only characterize its _behavior_ — the RNN's predictions match dead-end filling's — not its underlying _mechanism_. Two algorithms can agree on every output and still compute completely differently inside. **Data diversification:** broadening the training data improved generalization in one direction while degrading it in another.
 
+## From Colorado to Singapore
+
+<div class="photo-row">
+  <img src="/images/aaai.jpeg" alt="Standing with the AAAI letters at the 2026 conference in Singapore">
+  <img src="/images/singapore.jpeg" alt="Downtown Singapore, near the conference venue">
+</div>
+
+I was lucky enough to have this work accepted at AAAI — [ranked the #4 conference in artificial intelligence by Google Scholar](https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_artificialintelligence) — which meant giving an oral presentation to an international audience of experts on the other side of the world in Singapore. It was an unforgettable way to cap a years-long project.
+
 _Skills: Python/PyTorch, large-scale experiment design, out-of-distribution evaluation & stress-testing, model debugging & failure analysis, topological data analysis, scientific communication (peer-reviewed AAAI paper + conference talk)._

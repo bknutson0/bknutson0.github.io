@@ -109,6 +109,25 @@
   .page__content img.fig--wide {
     width: min(900px, 100%);
   }
+  /* Two photos side by side, stacking on narrow screens */
+  .page__content .photo-row {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin: 1.5em 0;
+  }
+  .page__content .photo-row img {
+    flex: 1 1 300px;
+    min-width: 0;
+    width: 100%;
+    object-fit: cover;
+  }
+  .page__content .fig-caption {
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--global-text-color-light);
+    margin-top: -0.75em;
+  }
   /* Skill rows: large gold icon column, text beside — mirrors the card layout */
   .skill-card {
     display: flex;

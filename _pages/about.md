@@ -19,7 +19,7 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
   <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
   <div>
     <h3>Build</h3>
-    <p>I love to design the simplest system that solves the problem, adding complexity only when it becomes necessary. At <strong>Oak Ridge National Laboratory</strong> I helped build a geospatial ML pipeline covering 898,000 buildings, and I co-developed <a href="https://github.com/understanding-search/maze-dataset">maze-dataset</a>, a peer-reviewed open-source package with <strong>80+ GitHub stars</strong> — working in Python, PyTorch, SQL, Docker, and AWS/GCP.</p>
+    <p>I love to design the simplest system that solves the problem, adding complexity only when it becomes necessary. At <strong>Oak Ridge National Laboratory</strong> I helped build a geospatial ML pipeline covering 898,000 buildings. Also, I co-authored <a href="https://github.com/understanding-search/maze-dataset">maze-dataset</a>, a peer-reviewed open-source package with <strong>80+ GitHub stars</strong> — working in Python, PyTorch, SQL, Docker, and AWS/GCP.</p>
   </div>
 </div>
 
@@ -51,10 +51,10 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
 </div>
 
 <div class="feature-card feature-card--reverse">
-  <a href="/portfolio/maze-dataset/"><img src="/images/maze-problem-solution.png" alt="A maze problem and its solution encoded as images"></a>
+  <a href="/portfolio/maze-dataset/"><img src="/images/maze-formats-card.png" alt="The same maze rendered as ASCII text, a pixel array, and a plot"></a>
   <div>
     <h3><a href="/portfolio/maze-dataset/">maze-dataset: open-source maze generation</a></h3>
-    <p>I co-developed a peer-reviewed Python package for generating, solving, and visualizing maze datasets, used in neural-network reasoning research with <strong>80+ GitHub stars</strong> Published in <strong>JOSS</strong>.</p>
+    <p>I co-authored a peer-reviewed Python package for generating, solving, and visualizing maze datasets — <strong>80+ GitHub stars</strong>, used in neural-network reasoning research. Published in <strong>JOSS</strong>.</p>
     <p><a href="/portfolio/maze-dataset/">Check it out →</a></p>
   </div>
 </div>
@@ -68,6 +68,6 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
   </div>
 </div>
 
-### Off the clock
+## Off the clock
 
-You'll find me on a pickleball court, hiking Colorado trails, or listening to Noah Kahan.
+Outside of work, you'll find me on a pickleball court, hiking Colorado trails, or listening to Noah Kahan.
