@@ -196,6 +196,26 @@
   .feature-card--reverse {
     flex-direction: row-reverse;
   }
+  /* Whole card is the click target (stretched link on the title) */
+  .feature-card {
+    position: relative;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+  .feature-card:hover {
+    background: rgba(201, 178, 101, 0.12);
+  }
+  .feature-card h3 a {
+    text-decoration: none;
+  }
+  .feature-card h3 a:hover {
+    text-decoration: underline;
+  }
+  .feature-card h3 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
   /* Uniform inline figures: one standard width, a wide variant for dense plots */
   .page__content img.fig {
     display: block;

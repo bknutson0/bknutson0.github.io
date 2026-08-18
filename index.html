@@ -191,6 +191,26 @@
   .feature-card--reverse {
     flex-direction: row-reverse;
   }
+  /* Whole card is the click target (stretched link on the title) */
+  .feature-card {
+    position: relative;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+  .feature-card:hover {
+    background: rgba(201, 178, 101, 0.12);
+  }
+  .feature-card h3 a {
+    text-decoration: none;
+  }
+  .feature-card h3 a:hover {
+    text-decoration: underline;
+  }
+  .feature-card h3 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
   /* Uniform inline figures: one standard width, a wide variant for dense plots */
   .page__content img.fig {
     display: block;
@@ -427,7 +447,7 @@
   <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
   <div>
     <h3>Build</h3>
-    <p>I love to design the simplest system that solves the problem, adding complexity only when it becomes necessary. At <strong>Oak Ridge National Laboratory</strong> I helped build a geospatial ML pipeline covering 898,000 buildings. Also, I co-authored <a href="https://github.com/understanding-search/maze-dataset">maze-dataset</a>, a peer-reviewed open-source package with <strong>80+ GitHub stars</strong> — working in Python, PyTorch, SQL, Docker, and AWS/GCP.</p>
+    <p>I love to design the simplest system that solves the problem, adding complexity only when necessary. At <strong>Oak Ridge National Laboratory</strong>, I helped build a geospatial ML pipeline covering 898,000 buildings. For my maze research, I co-authored <a href="https://github.com/understanding-search/maze-dataset">maze-dataset</a>, a peer-reviewed open-source package with <strong>80+ GitHub stars</strong>. Across projects, I work in Python, PyTorch, SQL, Docker, and AWS/GCP.</p>
   </div>
 </div>
 
@@ -454,7 +474,6 @@
   <div>
     <h3><a href="/portfolio/maze-extrapolation/">When can neural networks think longer to solve harder problems?</a></h3>
     <p>I stress-tested architectures designed to extrapolate on mazes far harder than their training data, uncovered the shortcut heuristic behind their success, and quantified a data-diversity trade-off. Published at <strong>AAAI 2026</strong> (oral).</p>
-    <p><a href="/portfolio/maze-extrapolation/">Check it out →</a></p>
   </div>
 </div>
 
@@ -463,7 +482,6 @@
   <div>
     <h3><a href="/portfolio/maze-dataset/">maze-dataset: open-source maze generation</a></h3>
     <p>I co-authored a peer-reviewed Python package for generating, solving, and visualizing maze datasets — <strong>80+ GitHub stars</strong>, used in neural-network reasoning research. Published in <strong>JOSS</strong>.</p>
-    <p><a href="/portfolio/maze-dataset/">Check it out →</a></p>
   </div>
 </div>
 
@@ -472,7 +490,6 @@
   <div>
     <h3><a href="/portfolio/ornl-building-heights/">Predicting building heights from satellite footprints</a></h3>
     <p>At <strong>Oak Ridge National Laboratory</strong>, I trained XGBoost on 898,000 buildings to predict heights from satellite-visible footprints (<strong>0.70 m MAE</strong>) — and showed that adding coarse global height data doesn't help.</p>
-    <p><a href="/portfolio/ornl-building-heights/">Check it out →</a></p>
   </div>
 </div>
 
