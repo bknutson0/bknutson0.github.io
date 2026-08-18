@@ -9,7 +9,7 @@ date: 2026-01-22
 
 _Joint work with Amandin Chyba Rabeendran, Michael Ivanitskiy, Jordan Pettyjohn, Cecilia Diniz-Behn, Samy Wu Fung, and Daniel McKenzie._
 
-**TL;DR:** Some neural networks can "think longer" at test time by iterating more. I stress-tested whether that extra compute lets them solve problems _harder_ than anything they saw in training. It does — in some ways but not others: the models quietly learned a shortcut heuristic instead of a general algorithm, and diversifying the training data fixed some failures while creating others.
+**TL;DR:** Some neural networks can "think longer" at test time by iterating more. I stress-tested whether that extra compute lets them solve problems _harder_ than anything they saw in training. It does in some ways but not others: the models quietly learned a shortcut heuristic instead of a general algorithm, and diversifying the training data fixed some failures while creating new ones.
 
 ## The problem
 
@@ -34,7 +34,7 @@ Maze-solving is the ideal testbed: classical algorithms provide ground-truth sol
 
 <img class="fig fig--wide" src="/images/maze-extrapolation.png" alt="Accuracy vs. maze size: more test-time iterations extend near-perfect accuracy to much larger mazes">
 
-**2. But the model learned a heuristic, not the goal.** The RNN's predictions approximately match _dead-end filling_, a classic algorithm that provably fails on mazes with loops — and indeed the RNN fails on them, incorrectly retaining loops from the input maze in its prediction. This is goal misgeneralization: perfect training accuracy concealed that the model never learned a general maze-solving method, only a shortcut.
+**2. But the model learned a heuristic, not the goal.** The RNN's predictions approximately match _dead-end filling_, a classic algorithm that provably fails on mazes with loops because it incorrectly retains loops from the input maze in its prediction. Perfect training accuracy concealed that the model never learned a general maze-solving method, only a shortcut.
 
 <img class="fig" src="/images/maze-rnn-loop-failure.png" alt="On a maze with loops, the RNN's prediction retains loops instead of a valid path">
 
@@ -48,7 +48,13 @@ Maze-solving is the ideal testbed: classical algorithms provide ground-truth sol
 
 ## Why it matters beyond mazes
 
-Mazes are a toy problem — and that is exactly the point. They are a miniature testbed for some of the biggest questions in modern AI. **Test-time scaling:** RNNs and INNs really can think longer to solve harder problems — the same principle that, realized in a very different architecture, drives today's [reasoning models](https://arxiv.org/abs/2408.03314). **Goal misgeneralization:** like all models, they can ace training while learning the wrong thing, and no accuracy metric reveals it until the distribution shifts. **Interpretability:** even with full access to a small network on a toy task, we could only characterize its _behavior_ — the RNN's predictions match dead-end filling's — not its underlying _mechanism_. Two algorithms can agree on every output and still compute completely differently inside. **Data diversification:** broadening the training data improved generalization in one direction while degrading it in another.
+Mazes are a toy problem, and that is exactly the point. They are a miniature testbed for some of the biggest concepts in modern AI.
+
+**Test-time scaling:** RNNs and INNs really can think longer to solve harder problems. The same principle, realized in a very different architecture, drives today's [reasoning models](https://arxiv.org/abs/2408.03314).
+
+**Goal misgeneralization:** a model can ace training while quietly learning the wrong goal. Ours learned a shortcut heuristic, and no accuracy metric revealed the problem until the distribution shifted. Diagnosis is hard even in a toy setting: we could match the RNN's _behavior_ to dead-end filling's, but its _mechanism_ stayed opaque, since two algorithms can agree on every output while computing differently inside. [Some researchers fear](https://arxiv.org/abs/2210.01790) that someday a superintelligent model subtly pursuing an unintended goal will be catastrophic.
+
+**Data diversification:** broadening the training data improved generalization in one direction while degrading it in another. More diverse data is not automatically better.
 
 ## From Colorado to Singapore
 
