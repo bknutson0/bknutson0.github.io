@@ -11,7 +11,7 @@ redirect_from:
 I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.edu/) at the Colorado School of Mines, advised by [Dr. Daniel McKenzie](https://danielmckenzie.github.io/) and [Dr. Samy Wu Fung](https://swufung.github.io/). My research lies at the intersection of deep learning and optimization: I study neural networks that can think longer to solve harder problems, and how to train them faster. **I'm seeking data science and machine learning roles starting early 2027.**
 {: .lead}
 
-[Resume](/files/resume.pdf) · [CV](/files/CV.pdf) · [Research](/research/)
+[Resume](/files/resume.pdf) · [CV](/files/CV.pdf)
 
 ## What I do
 
