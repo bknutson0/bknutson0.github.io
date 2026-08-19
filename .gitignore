@@ -18,3 +18,5 @@ vendor/
 
 # Ignore macOS system files
 .DS_Store
+# Local working notes
+TODO.md

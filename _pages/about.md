@@ -47,6 +47,7 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
     <h3><a href="/portfolio/maze-extrapolation/">When can neural networks think longer to solve harder problems?</a></h3>
     <p>I stress-tested architectures designed to extrapolate on mazes far harder than their training data, uncovered the shortcut heuristic behind their success, and quantified a data-diversity trade-off. Published at <strong>AAAI 2026</strong> (oral).</p>
   </div>
+  <p class="card-cue">Read the full story →</p>
 </div>
 
 <div class="feature-card feature-card--reverse">
@@ -55,6 +56,7 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
     <h3><a href="/portfolio/maze-dataset/">maze-dataset: open-source maze generation</a></h3>
     <p>I co-authored a peer-reviewed Python package for generating, solving, and visualizing maze datasets — <strong>80+ GitHub stars</strong>, used in neural-network reasoning research. Published in <strong>JOSS</strong>.</p>
   </div>
+  <p class="card-cue">Read the full story →</p>
 </div>
 
 <div class="feature-card">
@@ -63,6 +65,7 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
     <h3><a href="/portfolio/ornl-building-heights/">Predicting building heights from satellite footprints</a></h3>
     <p>At <strong>Oak Ridge National Laboratory</strong>, I trained XGBoost on 898,000 buildings to predict heights from satellite-visible footprints (<strong>0.70 m MAE</strong>) — and showed that adding coarse global height data doesn't help.</p>
   </div>
+  <p class="card-cue">Read the full story →</p>
 </div>
 
 ## Off the clock
