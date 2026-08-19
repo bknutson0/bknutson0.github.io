@@ -199,11 +199,36 @@
   /* Whole card is the click target (stretched link on the title) */
   .feature-card {
     position: relative;
+    border: 2px solid var(--global-border-color);
     border-radius: 8px;
-    transition: background 0.15s ease;
+    padding: 0.75em 1em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transition: background 0.15s ease, border-color 0.15s ease,
+      transform 0.15s ease, box-shadow 0.15s ease;
   }
   .feature-card:hover {
+    border-color: var(--accent-gold);
     background: rgba(201, 178, 101, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  html[data-theme="dark"] .feature-card {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+  }
+  html[data-theme="dark"] .feature-card:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  }
+  .feature-card .card-cue {
+    flex: 1 1 100%;
+    text-align: right;
+    color: var(--global-link-color);
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 0.25em 0 0;
+    transition: transform 0.15s ease;
+  }
+  .feature-card:hover .card-cue {
+    transform: translateX(4px);
   }
   .feature-card h3 a {
     text-decoration: none;
@@ -338,7 +363,7 @@
 
   <div class="author__avatar">
     
-    	<img src="https://bknutson0.github.io/images/profile.jpeg" class="author__avatar" alt="Brandon Knutson">
+    	<img src="https://bknutson0.github.io/images/profile-hike.jpeg" class="author__avatar" alt="Brandon Knutson">
     
   </div>
 
@@ -548,7 +573,7 @@
 
 <div class="page__footer-copyright">
   &copy; 2026 Brandon Knutson, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2026-08-18<br />
+  Site last updated 2026-08-19<br />
   Favicon: <a href="https://www.flaticon.com/free-icons/ouroboros" title="ouroboros icons" rel="nofollow">ouroboros icon by Prosymbols Premium — Flaticon</a>
 </div>
 
