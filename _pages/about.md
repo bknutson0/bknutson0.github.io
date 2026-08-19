@@ -27,7 +27,7 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
   <i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i>
   <div>
     <h3>Evaluate</h3>
-    <p>I stress-test models to find where they break and why, because you don't know a system until you know its limits. My <strong>AAAI 2026</strong> paper traced neural networks' out-of-distribution failures to a hidden shortcut heuristic, and my controlled ablation at <strong>ORNL</strong> showed that a recent global height dataset adds nothing to prediction accuracy.</p>
+    <p>I stress-test models to find where they break and why, because you don't know a system until you know its limits. <strong>Our AAAI 2026 paper</strong> traced neural networks' out-of-distribution failures to a hidden shortcut heuristic, and my controlled ablation at <strong>ORNL</strong> showed that a recent global height dataset adds nothing to prediction accuracy.</p>
   </div>
 </div>
 
