@@ -53,7 +53,7 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
   <a href="/projects/maze-dataset/"><img src="/images/maze-formats-card.png" alt="The same maze rendered as ASCII text, a pixel array, and a plot"></a>
   <div>
     <h3><a href="/projects/maze-dataset/">maze-dataset: open-source maze generation</a></h3>
-    <p>I co-authored a peer-reviewed Python package for generating, solving, and visualizing maze datasets — <strong>80+ GitHub stars</strong>, used in neural-network reasoning research. Published in <strong>JOSS</strong>.</p>
+    <p>I co-authored a peer-reviewed Python package for generating, solving, and visualizing maze datasets, used in neural-network reasoning research with <strong>80+ GitHub stars</strong> . Published in <strong>JOSS</strong>.</p>
   </div>
   <p class="card-cue">Read the full story →</p>
 </div>
@@ -62,7 +62,7 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
   <a href="/projects/ornl-building-heights/"><img src="/images/ornl-footprints.png" alt="Satellite imagery of Denver converted to building footprints"></a>
   <div>
     <h3><a href="/projects/ornl-building-heights/">Predicting building heights from satellite footprints</a></h3>
-    <p>At <strong>Oak Ridge National Laboratory</strong>, I trained XGBoost on 898,000 buildings to predict heights from satellite-visible footprints (<strong>0.70 m MAE</strong>) — and showed that adding coarse global height data doesn't help.</p>
+    <p>At <strong>Oak Ridge National Laboratory</strong>, I trained XGBoost on 898,000 buildings to predict heights from satellite-visible footprints (<strong>0.70 m MAE</strong>), and showed that adding coarse global height data doesn't help.</p>
   </div>
   <p class="card-cue">Read the full story →</p>
 </div>
