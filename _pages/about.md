@@ -40,32 +40,13 @@ I'm a PhD candidate in [Applied Mathematics and Statistics](https://ams.mines.ed
 
 ## Featured projects
 
-<div class="feature-card">
-  <a href="/projects/maze-extrapolation/"><img src="/images/maze-generalization.png" alt="Models trained on easy mazes, tested on much harder ones"></a>
-  <div>
-    <h3><a href="/projects/maze-extrapolation/">When can neural networks think longer to solve harder problems?</a></h3>
-    <p>I stress-tested architectures designed to extrapolate on mazes far harder than their training data, uncovered the shortcut heuristic behind their success, and quantified a data-diversity trade-off. Published at <strong>AAAI 2026</strong> (oral presentation).</p>
-  </div>
-  <p class="card-cue">Read the full story →</p>
-</div>
-
-<div class="feature-card feature-card--reverse">
-  <a href="/projects/maze-dataset/"><img src="/images/maze-formats-card.png" alt="The same maze rendered as ASCII text, a pixel array, and a plot"></a>
-  <div>
-    <h3><a href="/projects/maze-dataset/">maze-dataset: open-source maze generation</a></h3>
-    <p>I co-authored a peer-reviewed Python package for generating, solving, and visualizing maze datasets, used in neural-network reasoning research with <strong>80+ GitHub stars</strong> . Published in <strong>JOSS</strong>.</p>
-  </div>
-  <p class="card-cue">Read the full story →</p>
-</div>
-
-<div class="feature-card">
-  <a href="/projects/ornl-building-heights/"><img src="/images/ornl-footprints.png" alt="Satellite imagery of Denver converted to building footprints"></a>
-  <div>
-    <h3><a href="/projects/ornl-building-heights/">Predicting building heights from satellite footprints</a></h3>
-    <p>At <strong>Oak Ridge National Laboratory</strong>, I trained XGBoost on 898,000 buildings to predict heights from satellite-visible footprints (<strong>0.70 m MAE</strong>), and showed that adding coarse global height data doesn't help.</p>
-  </div>
-  <p class="card-cue">Read the full story →</p>
-</div>
+{% assign featured = "maze-extrapolation,maze-dataset,ornl-building-heights" | split: "," %}
+{% for slug in featured %}
+{% capture project_url %}/projects/{{ slug }}/{% endcapture %}
+{% assign project = site.projects | where: "url", project_url | first %}
+{% assign rev = forloop.index0 | modulo: 2 %}
+{% if rev == 1 %}{% include project-card.html project=project reverse=true %}{% else %}{% include project-card.html project=project %}{% endif %}
+{% endfor %}
 
 ## Off the clock
 

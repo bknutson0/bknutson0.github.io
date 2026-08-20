@@ -1,6 +1,6 @@
 ---
 title: "maze-dataset: Open-Source Maze Generation for ML Research"
-excerpt: "Peer-reviewed Python package for generating, solving, and visualizing maze datasets — 80+ GitHub stars, used in neural-network reasoning research. Published in JOSS."
+excerpt: "I co-authored a peer-reviewed Python package for generating, solving, and visualizing maze datasets, used in neural-network reasoning research with **80+ GitHub stars**. Published in **JOSS**."
 image: /images/maze-formats-card.png
 image_alt: "The same maze rendered as ASCII text, a pixel array, and a plot"
 collection: projects

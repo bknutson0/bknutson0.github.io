@@ -1,6 +1,6 @@
 ---
 title: "Predicting Building Heights from Satellite-Derived Footprints"
-excerpt: "At Oak Ridge National Laboratory, I trained an XGBoost model on 898,000 buildings to predict building heights from footprint features (0.70 m MAE), and showed that adding coarse global height data doesn't help."
+excerpt: "At **Oak Ridge National Laboratory**, I trained XGBoost on 898,000 buildings to predict heights from satellite-visible footprints (**0.70 m MAE**), and showed that adding coarse global height data doesn't help."
 image: /images/ornl-footprints.png
 image_alt: "Satellite imagery of Denver converted to building footprints"
 collection: projects
