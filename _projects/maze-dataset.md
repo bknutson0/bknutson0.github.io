@@ -1,8 +1,12 @@
 ---
 title: "maze-dataset: Open-Source Maze Generation for ML Research"
-excerpt: "Peer-reviewed Python package for generating, solving, and visualizing maze datasets — 80+ GitHub stars, used in neural-network reasoning research. Published in JOSS.<br/><img src='/images/maze-formats-card.png' alt='The same maze rendered as ASCII text, a pixel array, and a plot'>"
-collection: portfolio
+excerpt: "Peer-reviewed Python package for generating, solving, and visualizing maze datasets — 80+ GitHub stars, used in neural-network reasoning research. Published in JOSS."
+image: /images/maze-formats-card.png
+image_alt: "The same maze rendered as ASCII text, a pixel array, and a plot"
+collection: projects
 date: 2025-10-01
+redirect_from:
+  - /portfolio/maze-dataset/
 ---
 
 **Journal of Open Source Software, 2025** &middot; [Paper](https://doi.org/10.21105/joss.08633) &middot; [Code](https://github.com/understanding-search/maze-dataset)
@@ -22,6 +26,6 @@ Before this package, existing maze datasets were often fixed or offered limited 
 
 ## My contribution
 
-This work was spearheaded by my collaborator, [Michael Ivanitskiy](https://miv.name/). I'm a co-author on the JOSS paper, and the honest description of my role is _demanding downstream user_. The library powers the out-of-distribution evaluations in my [AAAI 2026 paper on logical extrapolation](/portfolio/maze-extrapolation/), and pushing it hard — generating tens of thousands of mazes across a variety of configurations — surfaced real bugs and design limitations. I fixed issues through pull requests and motivated several larger changes.
+This work was spearheaded by my collaborator, [Michael Ivanitskiy](https://miv.name/). I'm a co-author on the JOSS paper, and the honest description of my role is _demanding downstream user_. The library powers the out-of-distribution evaluations in my [AAAI 2026 paper on logical extrapolation](/projects/maze-extrapolation/), and pushing it hard — generating tens of thousands of mazes across a variety of configurations — surfaced real bugs and design limitations. I fixed issues through pull requests and motivated several larger changes.
 
 _Skills: Python, open-source contribution (issues, pull requests, code review), scientific software, peer review (JOSS)._

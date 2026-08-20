@@ -1,8 +1,12 @@
 ---
 title: "When Can Neural Networks Think Longer to Solve Harder Problems?"
-excerpt: "Stress-testing test-time compute: I evaluated recurrent and implicit networks on out-of-distribution maze-solving, uncovered a hidden heuristic behind their success, and quantified a train-data diversity trade-off. Published at AAAI 2026.<br/><img src='/images/maze-generalization.png' alt='Models trained on easy mazes are tested on much harder ones'>"
-collection: portfolio
+excerpt: "Stress-testing test-time compute: I evaluated recurrent and implicit networks on out-of-distribution maze-solving, uncovered a hidden heuristic behind their success, and quantified a train-data diversity trade-off. Published at AAAI 2026."
+image: /images/maze-generalization.png
+image_alt: "Models trained on easy mazes are tested on much harder ones"
+collection: projects
 date: 2026-01-22
+redirect_from:
+  - /portfolio/maze-extrapolation/
 ---
 
 **Published at AAAI 2026 (oral presentation)** &middot; [Paper](https://arxiv.org/abs/2410.03020) &middot; [Code](https://github.com/mines-opt-ml/maze-extrapolation) &middot; [Talk video](https://underline.io/lecture/139985-on-logical-extrapolation-for-mazes-with-recurrent-and-implicit-networks) &middot; [Slides](/files/aaai26-slides.pdf) &middot; [Poster](/files/aaai26-poster.pdf) &middot; [maze-dataset package](https://github.com/understanding-search/maze-dataset)
@@ -17,7 +21,7 @@ Production models constantly face inputs harder than their training data. Recurr
 
 <img class="fig" src="/images/maze-generalization.png" alt="Train on small, easy mazes; test on large mazes and mazes with loops">
 
-Maze-solving is the ideal testbed: classical algorithms provide ground-truth solutions at any difficulty, so I trained on easy mazes and generated _harder_ test mazes along three controlled dimensions. **Maze size** (e.g., 9×9) makes problems bigger. **Percolation** (_p_ = 0 to 1) removes walls to create loops, producing multiple solutions where previously there was one. **Deadend-start** (True or False) controls whether the solution path begins at a dead end. The models were trained only on the easiest corner of this space — 9×9 mazes with _p_ = 0 and deadend-start True — then tested far beyond it. All mazes come from [maze-dataset](/portfolio/maze-dataset/), the open-source package we built for exactly this purpose.
+Maze-solving is the ideal testbed: classical algorithms provide ground-truth solutions at any difficulty, so I trained on easy mazes and generated _harder_ test mazes along three controlled dimensions. **Maze size** (e.g., 9×9) makes problems bigger. **Percolation** (_p_ = 0 to 1) removes walls to create loops, producing multiple solutions where previously there was one. **Deadend-start** (True or False) controls whether the solution path begins at a dead end. The models were trained only on the easiest corner of this space — 9×9 mazes with _p_ = 0 and deadend-start True — then tested far beyond it. All mazes come from [maze-dataset](/projects/maze-dataset/), the open-source package we built for exactly this purpose.
 
 <img class="fig" src="/images/maze-ood-shifts.png" alt="Three axes of increasing test difficulty: maze size, percolation, and start position">
 
@@ -63,6 +67,6 @@ Mazes are a toy problem, and that is exactly the point. They are a miniature tes
   <img src="/images/singapore.jpeg" alt="Downtown Singapore">
 </div>
 
-I was lucky enough to have this work selected for an oral presentation at AAAI-26 (top 4% of 23,680 submissions). This meant presenting to an international audience of experts on the other side of the world in Singapore. It was an unforgettable way to cap a years-long project.
+I was lucky enough to have this work selected for an oral presentation at AAAI-26 (top 4% of 23,680 submissions). This meant giving an oral presentation to an international audience of experts on the other side of the world in Singapore. It was an unforgettable way to cap a years-long project.
 
 _Skills: Python/PyTorch, large-scale experiment design, out-of-distribution evaluation & stress-testing, model debugging & failure analysis, topological data analysis, scientific communication (peer-reviewed AAAI paper + conference talk)._

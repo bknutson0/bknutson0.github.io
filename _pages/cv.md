@@ -26,7 +26,7 @@ redirect_from:
 **On Logical Extrapolation for Mazes with Recurrent and Implicit Networks**
 <br>**Brandon Knutson**, Amandin Chyba Rabeendran, Michael Ivanitskiy, Jordan Pettyjohn, Cecilia Diniz-Behn, Samy Wu Fung, Daniel McKenzie
 <br>_AAAI 2026 (oral presentation)_
-<br>[[Paper](https://arxiv.org/abs/2410.03020)] [[Code](https://github.com/mines-opt-ml/maze-extrapolation)] [[Project page](/portfolio/maze-extrapolation/)]
+<br>[[Paper](https://arxiv.org/abs/2410.03020)] [[Code](https://github.com/mines-opt-ml/maze-extrapolation)] [[Project page](/projects/maze-extrapolation/)]
 
 **maze-dataset: Maze Generation with Algorithmic Variety and Representational Flexibility**
 <br>Michael Ivanitskiy, Aaron Sandoval, Alexander F. Spies, Tilman Räuker, **Brandon Knutson**, Cecilia Diniz-Behn, Samy Wu Fung
